@@ -66,12 +66,13 @@
     $sql = "SELECT * FROM fornecedor WHERE nome LIKE '%$pesquisar%'";
     $query = mysqli_query($link,$sql);
     echo "<table align='center' border='1' cellpadding='8'><tr>";
-    echo "<tr><th>Produto</th><th>Preço</th><th>Quantidade em estoque</th><th>Editar</th><th>Excluir</th></tr></tr>";
-      while($row=mysqli_fetch_array($query)){
-        echo"<tr><td>". $consulta['nome']."</td>";
-        echo "<td>".number_format(@$consulta['valor'], 2, ',', '.')."</td>";
-        echo "<td>".@$consulta['qtd']."</td>";
-         echo "<td><a href='editar_fornecedor.php?id_fornecedor=".@$consulta['id_fornecedor']."'>Editar</a></td>";
+      echo "<tr><th>Produto</th><th>CNPJ</th><th>Endereço</th><th>Telefone</th><th>Editar</th><th>Excluir</th></tr></tr>";
+      while($consulta=mysqli_fetch_array($query)){
+                       echo "<tr><td>".@$consulta['nome']."</td>";
+                echo "<td>".number_format(@$consulta['cnpj'], 2, ',', '.')."</td>";
+                echo "<td>".@$consulta['endereco']."</td>";
+                echo "<td>".@$consulta['telefone']."</td>";
+                 echo "<td><a href='editar_fornecedor.php?id_fornecedor=".@$consulta['id_fornecedor']."'>Editar</a></td>";
                 echo "<td><a href='excluir_fornecedor.php?id_fornecedor=".@$consulta['id_fornecedor']."'>Excluir</a></td>";
     }
   }

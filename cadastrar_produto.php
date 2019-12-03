@@ -31,7 +31,7 @@
 			  
 			 <div class="form-group">
 			    <label for="exampleInputPassword1">Marca</label>
-			    <input type="text" class="form-control" id="marcaproduto" placeholder="ex: Cabo de rede" name="marca">
+			    <input type="text" class="form-control" id="marcaproduto" placeholder="ex: Apple" name="marca">
 			  </div> 
 
 			  <!--<div class="form-group">

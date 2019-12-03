@@ -9,7 +9,7 @@
 	$sql = "DELETE FROM produto WHERE id_produto='$id_produto'";
     $qr = mysqli_query($link, $sql) or die(mysqli_error());
 	$consulta = mysqli_fetch_assoc($qr);
-	echo " Produto Excluido!  <script>window.location='consultar_fornecedor.php'</script>";
+	echo " Produto Excluido!  <script>window.location='index.php'</script>";
 
 	
 	

@@ -36,12 +36,12 @@
     $query = mysqli_query($link,$sql);
     echo "<table align='center' border='1' cellpadding='8'cellspacing='0'><tr>";
     echo "<tr><th>Produto</th><th>Preço</th><th>Quantidade em estoque</th><th>Editar</th><th>Excluir</th></tr>";
-      while($row=mysqli_fetch_array($query)){
-        echo"<tr><td>". $row['nome']."</td>";
+      while($consulta=mysqli_fetch_array($query)){
+        echo"<tr><td>".@$consulta['nome']."</td>";
         echo "<td>".number_format(@$consulta['valor'], 2, ',', '.')."</td>";
         echo "<td>".@$consulta['qtd']."</td>";
     		echo "<td><a href='editar_produto.php?id_produto=".@$consulta['id_produto']."'>Editar</a></td>";
-    		echo "<td><a href='excluir_produto.php'>Excluir</a></td>";
+        echo "<td><a href='excluir_produto.php?id_produto=".@$consulta['id_produto']."'>Excluir</a></td>";
     }
   }
 ?>
